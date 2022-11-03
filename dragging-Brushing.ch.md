@@ -46,7 +46,7 @@ let drag = d3.drag()
 
 如果拖动的元素是由[数据连接](https://www.d3indepth.com/datajoins)创建的，并且连接的数据具有`x`和`y`属性，则计算拖动事件对象的 和 属性，以保持元素和指针的`x`相对**位置**。（这可以防止元素的中心“捕捉”到指针位置。）否则和是**相对于被拖动元素的父元素**的指针位置。`y``x``y`
 
-通过选择元素并将拖动行为传递给[`.call`方法](https://www.d3indepth.com/selections/#call)，可以将拖动行为附加到元素。
+通过选择元素并将拖动行为传递给[`.call`方法]()，可以将拖动行为附加到元素。
 
 例如向`circle`元素添加拖动行为：
 
@@ -70,40 +70,40 @@ d3.select('svg')
 let data = [], width = 600, height = 400, numPoints = 10;
 
 let drag = d3.drag()
-	.on('drag', handleDrag);
+  .on('drag', handleDrag);
 
 function handleDrag(e) {
-	e.subject.x = e.x;
-	e.subject.y = e.y;
-	update();
+  e.subject.x = e.x;
+  e.subject.y = e.y;
+  update();
 }
 
 function initDrag() {
-	d3.select('svg')
-		.selectAll('circle')
-		.call(drag);
+  d3.select('svg')
+    .selectAll('circle')
+    .call(drag);
 }
 
 function updateData() {
-	data = [];
-	for(let i=0; i<numPoints; i++) {
-		data.push({
-			id: i,
-			x: Math.random() * width,
-			y: Math.random() * height
-		});
-	}
+  data = [];
+  for(let i=0; i<numPoints; i++) {
+    data.push({
+      id: i,
+      x: Math.random() * width,
+      y: Math.random() * height
+    });
+  }
 }
 
 function update() {
-	d3.select('svg')
-		.selectAll('circle')
-		.data(data)
-		.join('circle')
-		.attr('cx', function(d) { return d.x; })
-		.attr('cy', function(d) { return d.y; })
+  d3.select('svg')
+    .selectAll('circle')
+    .data(data)
+    .join('circle')
+    .attr('cx', function(d) { return d.x; })
+    .attr('cy', function(d) { return d.y; })
     .attr("fill", (d, i) => d3.schemeCategory10[i % 10])
-		.attr('r', 40);
+    .attr('r', 40);
 }
 
 updateData();
@@ -112,7 +112,8 @@ initDrag();
 
 ```
 
-![drag](E:\小册\D3js\d3-markdown\drag.gif)
+![drag](https://user-images.githubusercontent.com/32726183/199651629-952b4bd6-0dbe-4d0e-8840-52ea8a3f0275.gif)
+
 
 >  https://codepen.io/wantnocode/pen/VwXgvwZ
 
@@ -156,7 +157,7 @@ let brush = d3.brush()
 
 `handleBrush`接收单个参数`e`，该参数是表示画笔事件的对象。画笔事件中最有用的属性是将画笔`.selection`的范围表示为一个数组`[[x0, y0], [x1, y1]]`，其中`x0, y0`和`x1, y1`是画笔的对角。通常`handleBrush`会计算哪些元素在画笔范围内并相应地更新它们。
 
-通过选择元素并将画笔行为传递给[`.call`方法](https://www.d3indepth.com/selections/#call)，可以将画笔行为附加到元素：
+通过选择元素并将画笔行为传递给[`.call`方法]()，可以将画笔行为附加到元素：
 
 ```
 d3.select('svg')
@@ -251,7 +252,7 @@ initBrush();
 updateData();
 update();
 ```
+![Brush](https://user-images.githubusercontent.com/32726183/199651652-f3fe6a1e-367d-4489-b2e0-db2dba8443b1.gif)
 
-![Brush](E:\小册\D3js\d3-markdown\Brush.gif)
 
 > https://codepen.io/wantnocode/pen/WNzmRad
