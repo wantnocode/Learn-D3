@@ -27,7 +27,7 @@ D3 的力布局使用基于**物理的模拟器**来定位视觉元素。
 - 碰撞检测（避免`circles`重叠）
 - `circles`被三个重心之一吸引（`category`字段 :`A`，`B`或`C`）
 
-![image-20220829141644227](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220829141644227.png)
+![image-20220829141644227](./image/image-20220829141644227.png)
 
 > https://codepen.io/wantnocode/pen/jOzjXqB?editors=1111
 
@@ -74,7 +74,7 @@ function ticked() {
 }
 ```
 
-![image-20220829151808204](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220829151808204.png)
+![image-20220829151808204](./image/image-20220829151808204.png)
 
 > https://codepen.io/wantnocode/pen/qBozLjv
 
@@ -126,7 +126,7 @@ simulation.force('center', d3.forceCenter(100, 100))
 simulation.force('charge', d3.forceManyBody().strength(-20))
 ```
 
-![image-20220829151814539](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220829151814539.png)
+![image-20220829151814539](./image/image-20220829151814539.png)
 
 > 在创建网络图时，通常配置元素相互排斥。但对于元素聚集在一起的需求，则需要配置元素的吸引(引力)。
 >
@@ -154,7 +154,7 @@ let simulation = d3.forceSimulation(nodes)
   }))
 ```
 
-![image-20220829155113093](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220829155113093.png)
+![image-20220829155113093](./image/image-20220829155113093.png)
 
 > https://codepen.io/wantnocode/pen/GRxbzMM
 
@@ -179,7 +179,7 @@ let simulation = d3.forceSimulation(nodes)
   }));
 ```
 
-![image-20220829141644227](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220829141644227.png)
+![image-20220829141644227](./image/image-20220829141644227.png)
 
 > https://codepen.io/wantnocode/pen/jOzjXqB
 
@@ -207,8 +207,8 @@ let simulation = d3.forceSimulation(nodes)
 ```
 let links = d3.range(nodes.length - 1).map(function(i) {
     return {
-    	source: Math.floor(Math.sqrt(i)),
-    	target: i + 1,
+      source: Math.floor(Math.sqrt(i)),
+      target: i + 1,
     };
 });
 let links = [
@@ -226,7 +226,7 @@ let simulation = d3.forceSimulation(nodes)
   .force('link', d3.forceLink().links(links));
 ```
 
-![image-20220829170154037](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220829170154037.png)
+![image-20220829170154037](./image/image-20220829170154037.png)
 
 
 
