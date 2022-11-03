@@ -14,7 +14,7 @@ d3相关学习 包含简易demo
 *D3全称 Data-Driven Documents 3个D开头的单词也是它D3简写的由来。*
 
 大多数图表库（例如:[Echarts](https://github.com/apache/echarts)）提供的都是现成的图表，而 D3 由很多**基础构建块**组成，可以使用这些构建块构建自定义图表或地图。
-![](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=463d7179824db72dd7cfc152a2f1cb89&file=file.png)
+![image](https://user-images.githubusercontent.com/32726183/199635477-4f36dc67-040b-4614-b3af-3c9ecf05215e.png)
 
 
 >  [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/MWVNJwW?editors=1111)
@@ -40,7 +40,7 @@ d3相关学习 包含简易demo
 
 
 ## D3 内部到底有哪些模块？ 
-![](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=599968a9bcc95452e0fa3261c2241bdc&file=file.png)
+![image](https://user-images.githubusercontent.com/32726183/199635490-5233ce32-d3bf-43f0-a52f-a9619ab1c924.png)
 
 上面就是`D3`所有的`repositories`(仓库), 大概分为几类:
 
@@ -55,7 +55,8 @@ d3相关学习 包含简易demo
 ## 本系列contents(内容)
 
 
-![](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=75f52ce06f84fbe5b520a588d8f0f8b4&file=file.png)
+![image](https://user-images.githubusercontent.com/32726183/199635507-e0571aa8-c214-49b3-92f5-b0fd55ef6e01.png)
+
 
 上面就是本系列内容的大纲, 简单拿几个展开说说:
 
@@ -81,14 +82,15 @@ d3相关学习 包含简易demo
 
 通过特定物理规则模拟，帮助我们特定方式展示元素信息。提供现成的内置力函数,并且支持拓展。
 
-![](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=17253bc9e3af9f6841dc5b0b249bf446&file=file.png)
+![image](https://user-images.githubusercontent.com/32726183/199635526-cc3e195f-8c9a-42fb-a325-bbf092b70780.png)
+
 
 **transitions**
 
 `transitions`可以在不同图表状态平滑转换,制作动画。例如，有一些`circle`元素, 当用户点击`update data`时 平滑过渡到新的坐标位置。为图表增加了视觉吸引力。
 
-![](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=a3a9a064e8ddbefc77eed66ab676bf32&file=file.gif)
-
+![image](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=a3a9a064e8ddbefc77eed66ab676bf32&file=file.gif)
+<img src="https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=a3a9a064e8ddbefc77eed66ab676bf32&file=file.gif">
 
 
 
