@@ -4,7 +4,7 @@
 
 *如何使用 D3 的轴模块创建图表轴。本文涵盖轴方向、转换、刻度数、自定义刻度值、刻度格式和刻度大小。*
 
-![image-20220818101207159](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818101207159.png)
+![image-20220818101207159](./image/image-20220818101207159.png)
 
 ## Axis
 
