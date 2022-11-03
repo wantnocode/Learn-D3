@@ -4,15 +4,18 @@
 
 比如将一个数组连接到 `SVG-circle`，单击`update`按钮时，数据随机改变使得`circle`会跳转到新位置, 首先看不加`Transitions`的效果:
 
-![transition1](E:\小册\D3js\d3-markdown\gif\transition1.gif)
+![transition1](https://user-images.githubusercontent.com/32726183/199651816-642cbd80-6a92-4798-ad43-422916f85f84.gif)
+
 
 如果我们向圆圈添加过渡，圆圈会平滑地移动到它们的新位置：
 
-![tranisition2](E:\小册\D3js\d3-markdown\gif\tranisition2.gif)
+![tranisition2](https://user-images.githubusercontent.com/32726183/199651825-6fa14363-67ae-420f-82ff-4b33dd634a79.gif)
+
 
 此外，**entering circles**（新创建的`circle`）和**exiting circles**（要删除的`circle`）可以通过特定的方式进行过渡。在此示例中，`entering`采取`fade In(淡入)` `exiting `采取 `drop Down（下降离开)`：
 
-![transition3](E:\小册\D3js\d3-markdown\gif\transition3.gif)
+![transition3](https://user-images.githubusercontent.com/32726183/199651841-1c190d66-cafe-445c-b467-2063d9375234.gif)
+
 
 ## 创建 D3 transition
 
@@ -52,7 +55,8 @@ updateAll(); // 单击按钮时调用
 
 单击按钮时，数据会发生改变(**主要就是x坐标信息**) 然后重新加载，圆圈会跳转到新位置：
 
-![transition1](E:\小册\D3js\d3-markdown\gif\transition1.gif)
+![transition1](https://user-images.githubusercontent.com/32726183/199651865-0265c769-ed70-4d98-8beb-0368b393e0f8.gif)
+
 
 然后, 只需要在`attr()`前面添加一个``.transition()``即可添加默认过渡效果:
 
@@ -73,7 +77,8 @@ function update() {
 
 
 
-![tranisition2](E:\小册\D3js\d3-markdown\gif\tranisition2.gif)
+![tranisition2](https://user-images.githubusercontent.com/32726183/199651884-f273513a-25ee-45d1-a41d-7b574c4269a1.gif)
+
 
 > 该`.transition`方法返回一个`transition selection`。与普通的 `D3 Selection`基本相同，除了`.attr`和`.style`方法对属性和样式进行动画处理。过渡选择还有其他方法`.tween`。
 
@@ -125,7 +130,8 @@ function update() {
 
 现在，当数据更新时，每个圆的**位置**、**半径**、**透明度**和**颜色都会发生变化：**
 
-![transition4](E:\小册\D3js\d3-markdown\gif\transition4.gif)
+![transition4](https://user-images.githubusercontent.com/32726183/199651904-66bee116-fc2c-4479-980d-e86ff949a787.gif)
+
 
 > https://codepen.io/wantnocode/pen/rNdgNzY?editors=1111
 
@@ -135,7 +141,8 @@ function update() {
 
 例如**entering circles**（新创建的`circle`）和**exiting circles**（要删除的`circle`）可以通过特定的方式进行过渡，`entering`采取`fade In(淡入)` `exiting `采取 `drop Down（下降离开)`：
 
-![transition3](E:\小册\D3js\d3-markdown\gif\transition3.gif)
+![transition3](https://user-images.githubusercontent.com/32726183/199651911-8eca1020-5e50-4337-b037-5a993b92ff04.gif)
+
 
 要定义进入和退出`tranistion`，需要将**三个函数**传递给该`.join`方法。
 
@@ -294,7 +301,8 @@ function update() {
 }
 ```
 
-![transition3](E:\小册\D3js\d3-markdown\gif\transition3.gif)
+![transition3](https://user-images.githubusercontent.com/32726183/199651952-cca50dc4-3320-49c4-bb85-b13bc0915a4e.gif)
+
 
 
 
@@ -321,7 +329,8 @@ d3.select('svg')
 
 比如我们将`进入元素`的`duration`设置为 2000 毫秒：
 
-![transition5](E:\小册\D3js\d3-markdown\gif\transition5.gif)
+![transition5](https://user-images.githubusercontent.com/32726183/199651966-61fd2537-756b-4b87-ad00-762560c4e39d.gif)
+
 
 > https://codepen.io/wantnocode/pen/RwMmNLG
 
@@ -354,7 +363,8 @@ d3.select('svg')
     });
 ```
 
-![transition6](E:\小册\D3js\d3-markdown\gif\transition6.gif)
+![transition6](https://user-images.githubusercontent.com/32726183/199651975-ba6e8623-1591-4e09-a71b-50301aa27ff6.gif)
+
 
 > https://codepen.io/wantnocode/pen/wvmbBjp?editors=1111
 
@@ -368,7 +378,8 @@ D3 有许多内置的缓动函数([需要了解easing functions 相关介绍可�
 ["easeBack","easeBackIn","easeBackInOut","easeBackOut","easeBounce","easeBounceIn","easeBounceInOut","easeBounceOut","easeCircle","easeCircleIn","easeCircleInOut","easeCircleOut","easeCubic","easeCubicIn","easeCubicInOut","easeCubicOut","easeElastic","easeElasticIn","easeElasticInOut","easeElasticOut","easeExp","easeExpIn","easeExpInOut","easeExpOut","easeLinear","easePoly","easePolyIn","easePolyInOut","easePolyOut","easeQuad","easeQuadIn","easeQuadInOut","easeQuadOut","easeSin","easeSinIn","easeSinInOut","easeSinOut"]
 ```
 
-![transition7](E:\小册\D3js\d3-markdown\gif\transition7.gif)
+![transition7](https://user-images.githubusercontent.com/32726183/199652015-ff609cb1-4f3c-453a-9ba2-5d5aa3114fac.gif)
+
 
 
 
@@ -407,7 +418,7 @@ d3.select('svg')
 
 
 
-![transition8](E:\小册\D3js\d3-markdown\gif\transition8.gif)
+![transition8](https://user-images.githubusercontent.com/32726183/199652031-de499fc0-34f5-40d1-b48f-2d20a6ea5d90.gif)
 
 
 
