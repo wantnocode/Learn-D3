@@ -1,12 +1,11 @@
-<iframe class="db center" src="https://www.d3in
-
 # D3 缩放和平移
 
 *D3 提供了一个模块“`D3.zoom`，提供为 HTML 或 SVG 元素添加缩放和平移行为。本文展示了如何创建缩放行为、如何添加缩放和平移做限制约束。*
 
 D3 可以为 HTML 或 SVG 元素添加**缩放**和**平移**行为。在以下示例中，单击并移动鼠标进行平移并使用鼠标滚轮进行缩放：
 
-![zoom&pan](E:\小册\D3js\d3-markdown\zoom&pan.gif)
+
+![zoom pan](https://user-images.githubusercontent.com/32726183/199651146-55ac9efc-421a-4133-ac55-a6231014573d.gif)
 
 > https://codepen.io/wantnocode/pen/vYRPxXx
 
@@ -57,7 +56,7 @@ function handleZoom(e) {
 > e.transform`有三个属性 x,y,k。 x,y指定平移变换。k表示缩放比例因子。
 > ```
 
-通过选择元素并将缩放行为传递给[`.call`方法](https://www.d3indepth.com/selections/#call)，您可以将缩放行为附加到元素：
+通过选择元素并将缩放行为传递给[`.call`方法]()，您可以将缩放行为附加到元素：
 
 ```
 d3.select('svg')
@@ -164,7 +163,8 @@ let zoom = d3.zoom()
 
 现在您只能放大到 5 的比例因子。您也不能缩小超过默认比例因子 1。此外，您不能平移超出图表的范围：
 
-![zoom&pan2](E:\小册\D3js\d3-markdown\zoom&pan2.gif)
+![zoom pan2](https://user-images.githubusercontent.com/32726183/199651293-ba03632c-237b-4b15-ab97-1fdd427da644.gif)
+
 
 > https://codepen.io/wantnocode/pen/rNdRyQO
 
@@ -199,7 +199,7 @@ d3.select('svg')
 
 这是使用上述几种方法的完整示例：
 
-![image-20220822171431745](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220822171431745.png)
+![image-20220822171431745](./image/image-20220822171431745.png)
 
 ```
 let data = [], width = 600, height = 400, numPoints = 100;
