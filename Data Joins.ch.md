@@ -34,7 +34,7 @@ d3.select('.chart')
   .style('fill', 'blue');
 ```
 
-![**image-20220816104637296**](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816104637296.png)
+![**image-20220816104637296**](./image/image-20220816104637296.png)
 
 
 
@@ -138,7 +138,7 @@ d3.select('.chart')
   .style('fill', 'orange');
 ```
 
-![image-20220816113151384](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816113151384.png)
+![image-20220816113151384](./image/image-20220816113151384.png)
 
 您只会看到一个圆圈，因为所有五个圆圈的位置和大小都相同。
 
@@ -173,7 +173,7 @@ d3.select('.chart')
 
  D3 将每个圆圈的`cx`属性设置为`i * 100`。`i`是选择中的索引，因此第一个圆圈将位于`0`，下一个位于`100`，依此类推：
 
-![image-20220816112622993](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816112622993.png)
+![image-20220816112622993](./image/image-20220816112622993.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/oNqQxrj)
 
@@ -196,7 +196,7 @@ d3.select('.chart')
   .style('fill', 'blue');
 ```
 
-![image-20220816112826890](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816112826890.png)
+![image-20220816112826890](./image/image-20220816112826890.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/MWVzeKx)
 
@@ -222,7 +222,7 @@ d3.select('.chart')
 
 ```
 
-![image-20220816113027753](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816113027753.png)
+![image-20220816113027753](./image/image-20220816113027753.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/LYdXZZN)
 
@@ -276,7 +276,7 @@ d3.select('.chart')
 
 ```
 
-![image-20220816113925241](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816113925241.png)
+![image-20220816113925241](./image/image-20220816113925241.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/jOzQrMQ)
 
@@ -292,37 +292,37 @@ var persons = [
 ];
 // 加入rect
 d3.select('.bars')
-	.selectAll('rect')
-	.data(persons)
-	.join('rect')
-	.attr('height', 19)
-	.attr('width', function(d) {
-		return d.score * 10;
-	})
-	.attr('y', function(d, i) {
-		return i * 20;
-	});
+  .selectAll('rect')
+  .data(persons)
+  .join('rect')
+  .attr('height', 19)
+  .attr('width', function(d) {
+    return d.score * 10;
+  })
+  .attr('y', function(d, i) {
+    return i * 20;
+  });
 
 ```
 
-![image-20220816114355759](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816114355759.png)
+![image-20220816114355759](./image/image-20220816114355759.png)
 
 图表还可以加入`text`说明:
 
 ```
 d3.select('.labels')
-	.selectAll('text')
-	.data(persons)
-	.join('text')
-	.attr('y', function(d, i) {
-		return i * 20 + 13;
-	})
-	.text(function(d) {
-		return d.name;
-	});
+  .selectAll('text')
+  .data(persons)
+  .join('text')
+  .attr('y', function(d, i) {
+    return i * 20 + 13;
+  })
+  .text(function(d) {
+    return d.name;
+  });
 ```
 
-![image-20220816114504454](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816114504454.png)
+![image-20220816114504454](./image/image-20220816114504454.png)
 
 哇! 看到这里我们可以用D3去构造一个简单的条形图了  恭喜恭喜  ~~~
 
@@ -355,7 +355,7 @@ d3.select("body")
     .text(d => d);
 ```
 
-![image-20220816142744677](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816142744677.png)
+![image-20220816142744677](./image/image-20220816142744677.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/KKorzoQ)
 
@@ -371,70 +371,70 @@ d3.select("body")
 var myData = [40, 10, 20, 60, 30];
 
 function update(data) {
-	d3.select('.chart')
-		.selectAll('circle')
-		.data(data)
-		.join('circle')
-		.attr('cx', function(d, i) {
-			return (i+1) * 100;
-		})
-		.attr('cy', 50)
-		.attr('r', function(d) {
-			return 0.5 * d;
-		})
-		.style('fill', function(d) {
-			return d > 30 ? 'orange' : 'blue';
-		});
+  d3.select('.chart')
+    .selectAll('circle')
+    .data(data)
+    .join('circle')
+    .attr('cx', function(d, i) {
+      return (i+1) * 100;
+    })
+    .attr('cy', 50)
+    .attr('r', function(d) {
+      return 0.5 * d;
+    })
+    .style('fill', function(d) {
+      return d > 30 ? 'orange' : 'blue';
+    });
 }
 
 update(myData);
 
 ```
 
-![image-20220816135540864](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816135540864.png)
+![image-20220816135540864](./image/image-20220816135540864.png)
 
 在前面的示例中，数据永远不会改变，所以让我们添加一个按钮，单击该按钮会获取一些随机数据并调用`update`：
 
 ```
 function getData() {
-	let data = [];
-	for(let i=0; i< 5; i++) {
-		data.push(Math.random() * 60);
-	}
+  let data = [];
+  for(let i=0; i< 5; i++) {
+    data.push(Math.random() * 60);
+  }
 
-	return data;
+  return data;
 }
 
 function update(data) {
-	d3.select('.chart')
-		.selectAll('circle')
-		.data(data)
-		.join('circle')
-		.attr('cx', function(d, i) {
-			return i * 100;
-		})
-		.attr('cy', 50)
-		.attr('r', function(d) {
-			return 0.5 * d;
-		})
-		.style('fill', function(d) {
-			return d > 30 ? 'orange' : 'blue';
-		});
+  d3.select('.chart')
+    .selectAll('circle')
+    .data(data)
+    .join('circle')
+    .attr('cx', function(d, i) {
+      return i * 100;
+    })
+    .attr('cy', 50)
+    .attr('r', function(d) {
+      return 0.5 * d;
+    })
+    .style('fill', function(d) {
+      return d > 30 ? 'orange' : 'blue';
+    });
 }
 
 function updateAll() {
-	let myData = getData();
-	update(myData);
+  let myData = getData();
+  update(myData);
 }
 
 updateAll();
 
 d3.select("button")
-	.on("click", updateAll);
+  .on("click", updateAll);
 
 ```
 
-![image-20220816140559639](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816140559639.png)
+![image-20220816140559639](./image/image-20220816140559639.png)
 
 `getData`返回一个包含随机数的随机值的数组。因此，每次单击按钮时，数据，圆会相应更新。
 
