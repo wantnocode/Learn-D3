@@ -10,17 +10,17 @@
 
 曲线：
 
-![image-20220817100236300](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220817100236300.png)
+![image-20220817100236300](./image/image-20220817100236300.png)
 
 
 
 饼图段：
 
-![image-20220817100142837](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220817100142837.png)
+![image-20220817100142837](./image/image-20220817100142837.png)
 
 和符号：
 
-![image-20220817100119285](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220817100119285.png)
+![image-20220817100119285](./image/image-20220817100119285.png)
 
 
 
@@ -78,7 +78,7 @@ d3.select('path')
   .attr('d', pathData);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=19d5a3332449834cb77d3a79ae5714f8)
+![image](https://user-images.githubusercontent.com/32726183/199642761-a65c698a-69a8-4ffa-9008-e4f153bb2a6d.png)
 
 > https://codepen.io/wantnocode/pen/gOeQQNK
 
@@ -117,7 +117,8 @@ d3.select('path')
     .attr('d', line);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=50978451edecc7c1ddd85cba6b0f957b)
+![image](https://user-images.githubusercontent.com/32726183/199642786-3c10696b-92d2-4787-8b4f-0f486cff3c7d.png)
+
 
 > 
 
@@ -136,7 +137,7 @@ let lineGenerator = d3.line()
     });
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=f1cd041e397580f860e5850a80deec88)
+![image](https://user-images.githubusercontent.com/32726183/199642805-3fdfa151-b314-4a7a-bd89-b2967c88ce04.png)
 
 > 传递给`.x`and`.y`方法（和其他类似方法）的函数称为**访问函数**。
 
@@ -155,7 +156,7 @@ let lineGenerator = d3.line()
     .curve(d3.curveCardinal);  // 俩点内均匀插值  
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=46d3bbc986e1ffea48292f9a52f166c4)
+![image](https://user-images.githubusercontent.com/32726183/199642834-f7b88388-210d-401b-93e4-a3df00b14264.png)
 
 
 
@@ -187,7 +188,7 @@ lineGenerator
 
 在这个情况下调用生成器绘制之后，会在线中留下一段空白区域(面积) (实则就是跳过)：
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=7c13d95d4d1c99204a1faa179a3962d2)
+![image](https://user-images.githubusercontent.com/32726183/199643413-56ce957b-b270-456b-90c4-c70d9ccadfc1.png)
 
 #### 渲染到画布
 
@@ -224,7 +225,7 @@ var points = [
 var pathData = radialLineGenerator(points);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=3ca57ea3cb197b6a86bae30a9547604c)
+![image](https://user-images.githubusercontent.com/32726183/199643397-17a0c819-587f-47fa-973b-94bda122f4a1.png)
 
 **lineRadial**和**line**同样提供**curve()**,**defined()**方法 并提供自己所需要的的**angle,radius**;所以如果你的数据是对象数组的话,也可以按下面的编写方式:
 
@@ -270,7 +271,7 @@ d3.select('path')
     .attr('d', pathData);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=c2bb4dfe2a344a3f11de2f5a336ea989)
+![image](https://user-images.githubusercontent.com/32726183/199643365-d5ad12b1-e382-4089-906b-75c67a4794a5.png)
 
 ## 内置曲线工厂(函数)
 
@@ -328,8 +329,8 @@ setInterval(function(){
     }
 },800)
 ```
+![623ad321258e8_623ad321258e1](https://user-images.githubusercontent.com/32726183/199643548-b68266b7-244e-4d08-95e0-6581641e8910.gif)
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=68b6109569c75eae76bea0f4695fabda)
 
 ## Areas 
 
@@ -358,7 +359,7 @@ d3.select('path')
     .attr('d', pathData);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=4c9b8a96dbd2e31bf9365ff3a18d4916)
+![image](https://user-images.githubusercontent.com/32726183/199643305-4f54da59-23b4-44dc-b558-e61bca14d3d9.png)
 
 ### Areas-x,y 坐标
 
@@ -393,7 +394,7 @@ d3.select('path')
     .attr('d', pathData);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=e1875e1c387200d8ef51c59053c82d66)
+![image](https://user-images.githubusercontent.com/32726183/199643282-90e92f07-42a8-4586-b993-e0bb0af2b3c6.png)
 
 所有的访问器均可设置为函数进行传递(可以解决数据结构问题,转换问题等等):
 
@@ -427,7 +428,7 @@ d3.select('path')
         .attr('d', pathData);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=4da62560159934f88e47ab0099acaff1)
+![image](https://user-images.githubusercontent.com/32726183/199643250-be63e9e3-13a7-41d4-bcb6-eeb742896ac7.png)
 
 ### context
 
@@ -476,7 +477,7 @@ d3.select('path')
         .attr('d', pathData);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=c9035c8b0cea06250f01e76bc6d60b1c)
+![image](https://user-images.githubusercontent.com/32726183/199643231-7237f9cf-7cc5-4dbb-9b45-43f6e270448f.png)
 
 
 
@@ -509,7 +510,7 @@ d3.select('g')
     .attr('d', arcGenerator);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=05014045ba8162053ffedd2e2884e5c3)
+![image](https://user-images.githubusercontent.com/32726183/199643196-ea4a68ff-9d80-4ccd-9563-92f34e383f0c.png)
 
 当startAngle(圆弧起始点,单位为弧度), endAngle(圆弧结束点), innerRadius(内半径), outerRadius(外半径)任意参数不需要每次通过数据改变,那么就可以换个写法:
 
@@ -547,7 +548,7 @@ d3.select('g')
     .attr('d', arcGenerator);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=9eb332ff3bc35dc6c8ecf335b51e20fb)
+![image](https://user-images.githubusercontent.com/32726183/199643174-d1460364-510f-4056-9c47-da090c30466a.png)
 
 如果在数据结构发生变化时,例如参数名称发生了改变。可以为startAngleendAngle定义访问器。例如：
 
@@ -601,7 +602,7 @@ d3.select('g')
     });
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=baf48682f7d7cecdb42cf82e87a7939a)
+![image](https://user-images.githubusercontent.com/32726183/199643156-878a4cb5-957f-4cb7-bd97-db3680b06c7d.png)
 
 ## Pies
 
@@ -647,7 +648,7 @@ d3.select('g')
   .attr('d', arcGenerator);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=34651f1e6791da8be66d375adbc0d398)
+![image](https://user-images.githubusercontent.com/32726183/199643125-21b911df-40e3-4af5-85df-b5951dec2d73.png)
 
 ### Pies configuration functions(配置函数)
 
@@ -681,7 +682,7 @@ d3.select('g')
 .attr('d', arcGenerator);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=f95237a8d8cba7e69c0a1cc51fcf38ba)
+![image](https://user-images.githubusercontent.com/32726183/199643104-fcb233fa-6f8b-45b1-8318-742f8913462a.png)
 
 ### value
 
@@ -712,7 +713,7 @@ d3.select('g')
     .attr('d', arcGenerator);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=80d658675561a25cd6f5b64d69ebdf28)
+![image](https://user-images.githubusercontent.com/32726183/199643094-b714a7a0-ed78-4d39-8c93-3e1f7a0049c0.png)
 
 ### sortValues() sort() 排序
 
@@ -751,7 +752,7 @@ d3.select('g')
 .attr('d', arcGenerator);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=6654c340930970c8c796c2ac4f868b0a)
+![image](https://user-images.githubusercontent.com/32726183/199643064-f068c6b9-29f7-485e-ae0b-786a7022274d.png)
 
 **sort()**如果未指定,那么还是按照上面的value的降序生成;如果进行了指定, 则将数据比较器设置为指定的函数并返回此饼图生成。
 
@@ -794,7 +795,7 @@ d3.select('g')
     });
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=098e21e48999ccd148776e1b5a6b93d2)
+![image](https://user-images.githubusercontent.com/32726183/199643029-2886d9b0-c3c4-42aa-a94d-484be410c081.png)
 
 
 
@@ -849,7 +850,7 @@ g.selectAll('rect')
     .attr('height', 19);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=8d9f57f13a9d1d6c7afcdcca6a6f2a50)
+![image](https://user-images.githubusercontent.com/32726183/199643008-fd04ccef-4256-45e8-b8b5-fcc2b98ac550.png)
 
 与面积生成器结合使用时，堆叠折线图：
 
@@ -892,7 +893,7 @@ d3.select('g')
 .attr('d', areaGenerator)
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=50fe7d295371aacd2790cb5ba062043a)
+![image](https://user-images.githubusercontent.com/32726183/199642998-f2038633-5e98-48c7-92d6-5379eef90901.png)
 
 https://observablehq.com/@d3/streamgraph-transitions
 
@@ -943,7 +944,7 @@ d3.select('g')
     .attr('d', areaGenerator)
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=495eb7dc400bd9ced61b322c23cac5f9)
+![image](https://user-images.githubusercontent.com/32726183/199642964-a39768f4-4473-48b0-95c6-5a09a931f19e.png)
 
 ## Symbols 
 
@@ -978,7 +979,7 @@ d3.select('g')
     .attr('d', pathData);
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=c8b1ed9f0bfefa20548094ad3c92e63f)
+![image](https://user-images.githubusercontent.com/32726183/199642937-830572df-3f11-4c81-9021-b918aaf2f8a4.png)
 
 ### 支持的symbol类型
 
@@ -1033,4 +1034,4 @@ d3.select('g')
     });
 ```
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=d882764d62b058c3ba82659487266701)
+![image](https://user-images.githubusercontent.com/32726183/199642875-7178508a-df18-4b10-85b0-bd57ddc765b0.png)
