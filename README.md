@@ -8,7 +8,7 @@ d3相关学习 包含简易demo
 > 第一点作为重点, 本系列会完整涵盖 D3 概念, 比如:选择、连接、数据请求、缩放函数、事件处理和转换。
 
 ## D3-Introduction
-![](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=8bb58ac54605751ce20194e05c984227&file=file.png)
+![image](https://user-images.githubusercontent.com/32726183/199635367-f20ab5c9-7d00-4830-b2fb-41f291da967f.png)
 [D3.js](https://d3js.org/)是一个 JavaScript 库，用于在 Web 上创建**定制**的**交互式**图表。
 
 *D3全称 Data-Driven Documents 3个D开头的单词也是它D3简写的由来。*
