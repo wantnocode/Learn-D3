@@ -39,7 +39,7 @@ myScale(3);   // returns 180
 myScale(10);  // returns 600
 ```
 
-![image-20220816152438874](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816152438874.png)
+![image-20220816152438874](./image/image-20220816152438874.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/vYRQyrL)
 
@@ -65,7 +65,7 @@ D3 有大约 12 种不同的比例类型（`Linear、power、sequential、ordina
 
 `ScaleLinear`可能是最常用的刻度类型，因为它们是将数据值转换为位置和长度的最合适的刻度。
 
-他们使用线性函数![image-20220816153946785](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816153946785.png)在`domain`和`range`内进行插值。
+他们使用线性函数![image-20220816153946785](./image/image-20220816153946785.png)在`domain`和`range`内进行插值。
 
 ```
 var linearScale = d3.scaleLinear()
@@ -107,7 +107,7 @@ sqrtScale(50);  // returns 21.21...
 sqrtScale(100); // returns 30
 ```
 
-![image-20220816154632934](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816154632934.png)
+![image-20220816154632934](./image/image-20220816154632934.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/abYQBre)
 
@@ -129,7 +129,7 @@ var myData = [100, 200, 300, 400, 1000];
 // powerScale[item]
 ```
 
-![image-20220816160045668](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816160045668.png)
+![image-20220816160045668](./image/image-20220816160045668.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/OJvaWMO)
 
@@ -188,7 +188,7 @@ sequentialScale(50);  // returns 'rgb(175, 240, 91)'
 sequentialScale(100); // returns 'rgb(110, 64, 170)'
 ```
 
-![image-20220816162706923](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816162706923.png)
+![image-20220816162706923](./image/image-20220816162706923.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/rNdQjva)
 
@@ -256,8 +256,8 @@ linearScale(5);    // returns "rgb(111, 111, 238)"
 
 ```javascript
 var quantizeScale = d3.scaleQuantize()
-	.domain([0, 100])
-	.range(['blue', 'orange', 'green', 'pink']);
+  .domain([0, 100])
+  .range(['blue', 'orange', 'green', 'pink']);
 
 quantizeScale(10);  // returns 'blue'
 quantizeScale(30);  // returns 'orange'
@@ -273,7 +273,7 @@ quantizeScale(90);  // returns 'pink'
 
 其中*v*是输入值。
 
-![image-20220816170028059](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816170028059.png)
+![image-20220816170028059](./image/image-20220816170028059.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/RwMqpRY)
 
@@ -290,7 +290,7 @@ var quantileScale = d3.scaleQuantile()
 
 ```
 
-![image-20220816170455781](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816170455781.png)
+![image-20220816170455781](./image/image-20220816170455781.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/yLKQMVe)
 
@@ -322,8 +322,8 @@ quantileScale.quantiles();  // returns [26.66..., 63]
 var myData = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 var ordinalScale = d3.scaleOrdinal()
-	.domain(myData)
-	.range(['blue', 'red', 'pink']);
+  .domain(myData)
+  .range(['blue', 'red', 'pink']);
 
 ordinalScale('Jan');  // returns 'black';
 ordinalScale('Feb');  // returns 'red';
@@ -331,7 +331,7 @@ ordinalScale('Mar');  // returns 'pink';
 ordinalScale('Apr');  // returns 'black';  // repeat 重复
 ```
 
-![image-20220816172309736](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816172309736.png)
+![image-20220816172309736](./image/image-20220816172309736.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/MWVzpVJ)
 
@@ -387,7 +387,7 @@ bandScale('Tue');       // 40.40...
 
 然后就创建了这个条形图：
 
-![image-20220816173131167](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816173131167.png)
+![image-20220816173131167](./image/image-20220816173131167.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/mdxQWGg)
 
@@ -405,7 +405,7 @@ pointScale('Tue');  // returns 125
 pointScale('Fri');  // returns 500
 ```
 
-![image-20220816173806798](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816173806798.png)
+![image-20220816173806798](./image/image-20220816173806798.png)
 
 可以使用以下方法访问点之间的距离`.step()`：
 
