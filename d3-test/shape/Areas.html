@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../libs/main.css">
+</head>
+<body>
+	 <svg width="700" height="130">
+	  	<path transform="translate(100,100)" stroke="blue" fill="blue"/>
+	 </svg>
+
+  
+
+	<script src="../libs/d3.v7.js"></script>
+	<script>
+		///////////////////////////////////////////////// 代码1
+		// let areaGenerator = d3.area();
+
+		// let points = [
+		//   [0, 60],
+		//   [100, 100],
+		//   [200, 40],
+		//   [300, 60],
+		//   [400, 40],
+		//   [500, 90]
+		// ];
+
+		// let pathData = areaGenerator(points);
+
+
+		// d3.select('path')
+  // 			.attr('d', pathData);
+		
+  		////////////////////////////////////////// 代码1结束
+
+
+
+
+  		///////////////////////////////////////////////// 代码2
+		// let areaGenerator = d3.area()
+		// 						.y0(150);
+
+		// let points = [
+		//   [0, 60],
+		//   [100, 100],
+		//   [200, 40],
+		//   [300, 60],
+		//   [400, 40],
+		//   [500, 90]
+		// ];
+
+		// let pathData = areaGenerator(points);
+
+
+		// d3.select('path')
+  // 			.attr('d', pathData);
+		
+  		////////////////////////////////////////// 代码2结束
+
+
+
+
+
+  		///////////////////////////////////////////////// 代码3
+		// let areaGenerator = d3.area();
+		
+
+		// let points = [
+		//   {x: 0, y0: 30, y1: 60},
+		//   {x: 100, y0: 80, y1: 100},
+		//   {x: 200, y0: 20, y1: 40},
+		//   {x: 300, y0: 20, y1: 60},
+		//   {x: 400, y0: 10, y1: 40},
+		//   {x: 500, y0: 50, y1: 90}
+		// ];
+
+		// areaGenerator
+		//   .x(function(d) {
+		//     return d.x;
+		//   })
+		//   .y0(function(d) {
+		//   	return d.y0;
+		//   })
+		//   .y1(function(d) {
+		//   	return d.y1;
+		//   });
+
+		//   let pathData = areaGenerator(points);
+
+
+		// d3.select('path')
+		// 		.attr('d', pathData);
+  		////////////////////////////////////////// 代码3结束
+
+
+
+
+
+  		///////////////////////////////////////////////// 代码4
+		// let areaGenerator = d3.area();
+		
+
+		let points = [
+		  {angle: 0, r0: 30, r1: 70},
+		  {angle: Math.PI * 0.5, r0: 30, r1: 70},
+		  {angle: Math.PI, r0: 30, r1: 70},
+		  {angle: Math.PI * 1.5, r0: 30, r1: 70},
+		  {angle: Math.PI * 2, r0: 30, r1: 70},
+		  
+		];
+
+		let radialAreaGenerator = d3.radialArea()
+		  .angle(function(d) {
+		    return d.angle;
+		  })
+		  .innerRadius(function(d) {
+		    return d.r0;
+		  })
+		  .outerRadius(function(d) {
+		    return d.r1;
+		  });
+
+
+		let pathData = radialAreaGenerator(points);
+
+
+		d3.select('path')
+				.attr('d', pathData);
+  		////////////////////////////////////////// 代码4结束
+
+
+  // 		let context = d3.select('canvas').node().getContext('2d');
+
+		// lineGenerator.context(context);
+
+		// context.strokeStyle = '#999';
+		// context.beginPath();
+		// lineGenerator(points);
+		// context.stroke();
+	</script>
+</body>
+</html>

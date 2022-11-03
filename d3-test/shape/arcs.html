@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../libs/main.css">
+</head>
+<body>
+	 <svg width="700" height="130">
+	  	<g transform="translate(300, 120)" fill="blue" stroke="black"></g>
+	 </svg>
+
+  
+
+	<script src="../libs/d3.v7.js"></script>
+	<script>
+			
+		
+		//=============================== 代码1
+		// let arcGenerator = d3.arc();
+
+		// let arcs = [
+		// 	{startAngle: 0, endAngle: 10,innerRadius:100, outerRadius:60},
+		// ];
+		
+		// d3.select('g')
+		// 	.selectAll('path')
+		// 	.data(arcs)
+		// 	.join('path')
+		// 	.attr('d', arcGenerator);
+		//=============================== 代码1结束
+
+
+
+
+
+		////////////////////////////////// 代码2
+		
+		// let arcGenerator = d3.arc()
+		// 		.innerRadius(10)
+		// 		.outerRadius(60);
+				
+
+		// let arcs = [
+		// 	{startAngle: 0, endAngle: 10},
+		// ];
+		
+		// d3.select('g')
+		// 	.selectAll('path')
+		// 	.data(arcs)
+		// 	.join('path')
+		// 	.attr('d', arcGenerator);
+
+		/////////======================代码2结束
+
+
+
+
+
+		////////////////////////////////// 代码3
+		
+		// let arcGenerator = d3.arc()
+		// 		.innerRadius(10)
+		// 		.outerRadius(60)
+		// 		.padAngle(.02)
+		// 		.padRadius(100)
+		// 		.cornerRadius(4);
+
+		// let arcs = [
+		// 	{startAngle: 0, endAngle: Math.PI / 2},
+		// 	{startAngle: Math.PI / 2, endAngle: Math.PI },
+		// ];
+		// d3.select('g')
+		// 	.selectAll('path')
+		// 	.data(arcs)
+		// 	.join('path')
+		// 	.attr('d', arcGenerator);
+
+		/////////======================代码3结束
+		      
+
+		
+		////////////////////////////////// 代码4
+		// let arcGenerator = d3.arc()
+		// 		.innerRadius(10)
+		// 		.outerRadius(60)
+		// 		.padAngle(.02)
+		// 		.padRadius(100)
+		// 		.cornerRadius(4);
+				
+		// let arcs = [
+		// 	{new_startAngle: 0, new_endAngle: Math.PI / 2},
+		// 	{new_startAngle: Math.PI / 2, new_endAngle: Math.PI },
+		// ];
+		// // 建立访问器
+		// arcGenerator
+		//   .startAngle(function(d) {
+		// 	return d.new_startAngle;
+		//   })
+		//   .endAngle(function(d) {
+		// 	return d.new_endAngle;
+		//   });
+		// d3.select('g')
+		// 	.selectAll('path')
+		// 	.data(arcs)
+		// 	.join('path')
+		// 	.attr('d', arcGenerator);
+
+		/////////======================代码4结束
+		
+		//////////////////////////////// 代码5
+		
+		let arcGenerator = d3.arc()
+			.innerRadius(10)
+			.outerRadius(60);
+
+		let arcData = [
+			{label: '1',startAngle: 0, endAngle: Math.PI / 2},
+			{label: '2',startAngle: Math.PI / 2, endAngle: Math.PI },
+			
+		];
+
+		d3.select('g')
+			.selectAll('path')
+			.data(arcData)
+			.join('path')
+			.attr('d', arcGenerator);
+
+		d3.select('g')
+			.selectAll('text')
+			.data(arcData)
+			.join('text')
+			.each(function(d) {
+				let centroid = arcGenerator.centroid(d);
+				d3.select(this)
+					.attr('x', centroid[0])
+					.attr('y', centroid[1])
+					.attr('dy', '0.33em')
+					.text(d.label);
+			});
+		///////======================代码5结束
+	
+		
+	</script>
+</body>
+</html>

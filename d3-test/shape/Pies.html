@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../libs/main.css">
+</head>
+<body>
+	 <svg width="700" height="130">
+	  	<g transform="translate(300, 120)" fill="blue" stroke="black"></g>
+	 </svg>
+
+  
+
+	<script src="../libs/d3.v7.js"></script>
+	<script>
+			
+		
+		//=============================== 代码1
+
+		
+		// let pieGenerator = d3.pie();
+		// let data = [10, 40, 50];
+		// let arcData = pieGenerator(data);
+		// console.log(arcData)
+		// // [{
+		// // 	"data": 10,
+		// // 	"endAngle": 6.283185307179586,
+		// // 	"index": 2,
+		// // 	"padAngle": 0,
+		// // 	"startAngle": 5.654866776461628,
+		// // 	"value": 10,
+		// // },...]
+		// let arcGenerator = d3.arc()
+		// 	  .innerRadius(20)
+		// 	  .outerRadius(100);
+
+		// d3.select('g')
+		//   .selectAll('path')
+		//   .data(arcData)
+		//   .enter()
+		//   .append('path')
+		//   .attr('d', arcGenerator);
+		
+		//=============================== 代码1结束
+
+
+
+
+		//=============================== 代码2
+
+		
+		// let pieGenerator = d3.pie()
+		// 		.startAngle(0)
+		// 		.endAngle(Math.PI);
+		
+		// let data = [10, 40, 50];
+		// let arcData = pieGenerator(data);
+		
+		// let arcGenerator = d3.arc()
+		// 	  .innerRadius(20)
+		// 	  .outerRadius(100);
+
+		// d3.select('g')
+		//   .selectAll('path')
+		//   .data(arcData)
+		//   .enter()
+		//   .append('path')
+		//   .attr('d', arcGenerator);
+		
+		//=============================== 代码2结束
+
+
+
+		//=============================== 代码3
+
+		
+		// let pieGenerator = d3.pie()
+		//   .value(function(d) {return d.val});
+
+		// let list = [
+		//   {name: 'wlove1', val: 40},
+		//   {name: 'wlove2', val: 50},
+		//   {name: 'wlove3', val: 10}
+		// ];
+
+		// let arcData = pieGenerator(list);
+		// let arcGenerator = d3.arc()
+		// 	  .innerRadius(20)
+		// 	  .outerRadius(100);
+
+		// d3.select('g')
+		//   .selectAll('path')
+		//   .data(arcData)
+		//   .enter()
+		//   .append('path')
+		//   .attr('d', arcGenerator);
+		//=============================== 代码3结束
+		
+		
+
+		//=============================== 代码4
+
+		
+		// let pieGenerator = d3.pie()
+		//   .value(function(d) {return d.val})
+		//   .sortValues(function(a,b){return a - b});
+		//   // .sortValues(function(a,b){return b - a});
+
+		// let list = [
+		//   {name: 'wlove1', val: 40},
+		//   {name: 'wlove2', val: 50},
+		//   {name: 'wlove3', val: 10}
+		// ];
+
+		// let arcData = pieGenerator(list);
+		// let arcGenerator = d3.arc()
+		// 	  .innerRadius(20)
+		// 	  .outerRadius(100);
+
+		// d3.select('g')
+		//   .selectAll('path')
+		//   .data(arcData)
+		//   .enter()
+		//   .append('path')
+		//   .attr('d', arcGenerator);
+		//=============================== 代码4结束
+
+
+
+
+
+		//=============================== 代码5
+
+		
+		let pieGenerator = d3.pie()
+		  .value(function(d) {return d.val})
+		  .sort((a, b) => a.name.localeCompare(b.name));
+
+		let list = [
+		  {name: 'wlove1', val: 40},
+		  {name: 'wlove2', val: 50},
+		  {name: 'wlove3', val: 10}
+		];
+		
+		let arcData = pieGenerator(list);
+		let arcGenerator = d3.arc()
+			  .innerRadius(20)
+			  .outerRadius(100);
+
+		d3.select('g')
+		  .selectAll('path')
+		  .data(arcData)
+		  .enter()
+		  .append('path')
+		  .attr('d', arcGenerator);
+		d3.select('g')
+			.selectAll('text')
+			.data(arcData)
+			.join('text')
+			.each(function(d) {
+				var centroid = arcGenerator.centroid(d);
+				d3.select(this)
+					.attr('x', centroid[0])
+					.attr('y', centroid[1])
+					.attr('dy', '0.33em')
+					.text(d.data.name);
+			});
+		//=============================== 代码5结束
+
+
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../libs/main.css">
+</head>
+<body>
+	 <svg width="700" height="130">
+	  	<g transform="translate(300, 120)" fill="blue" stroke="blue"></g>
+	 </svg>
+
+  
+
+	<script src="../libs/d3.v7.js"></script>
+	<script>
+			
+		
+		//=============================== 代码1
+		// let symbolGenerator = d3.symbol()
+		// 	.type(d3.symbolStar)
+		// 	.size(80);
+
+		// let points = [
+		// 	[0, 80],
+		// 	[100, 100],
+		// 	[200, 30],
+		// 	[300, 50],
+		// 	[400, 40],
+		// 	[500, 80]
+		// ];
+
+		// let pathData = symbolGenerator();
+
+		// d3.select('g')
+		// 	.selectAll('path')
+		// 	.data(points)
+		// 	.join('path')
+		// 	.attr('transform', function(d) {
+		// 		return 'translate(' + d + ')';
+		// 	})
+		// 	.attr('d', pathData);
+  
+
+		//=============================== 代码1结束
+
+
+		//=============================== 代码2	
+		let symbolGenerator = d3.symbol()
+			.size(60);
+
+		let symbolTypes = ['symbolCircle', 'symbolCross', 'symbolDiamond', 'symbolDiamond2', 'symbolSquare','symbolSquare2', 'symbolStar', 'symbolTriangle', 'symbolTriangle2', 'symbolWye', 'symbolX'];
+
+		let xScale = d3.scaleLinear().domain([0, symbolTypes.length - 1]).range([0, 1200]);
+
+		d3.select('g')
+			.selectAll('path')
+			.data(symbolTypes)
+			.join('path')
+			.attr('transform', function(d, i) {
+				return 'translate(' + xScale(i) + ', 0)';
+			})
+			.attr('d', function(d) {
+				console.log(d)
+				symbolGenerator
+					.type(d3[d]);
+
+				return symbolGenerator();
+			});
+
+		d3.select('g')
+			.selectAll('text')
+			.data(symbolTypes)
+			.join('text')
+			.attr('transform', function(d, i) {
+				return 'translate(' + xScale(i) + ', 40)';
+			})
+			.text(function(d) {
+				return 'd3.' + d;
+			});
+		//=============================== 代码1结束
+	</script>
+</body>
+</html>

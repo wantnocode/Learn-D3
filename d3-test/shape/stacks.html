@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../libs/main.css">
+</head>
+<body>
+	 <svg width="700" height="130">
+	 	<g transform="translate(100,100)"></g>
+	  	<!-- <path transform="translate(100,100)" stroke="blue" fill="blue"/> -->
+	 </svg>
+
+  
+
+	<script src="../libs/d3.v7.js"></script>
+	<script>
+		///////////////////////////////////////////////// 代码1
+		///
+		// let colors = ['#FBB65B', '#513551', '#de3163'];
+
+		// let data = [
+		//   {apricots: 120, blueberries: 180, cherries: 100},
+		//   {apricots: 60, blueberries: 185, cherries: 105},
+		//   {apricots: 100, blueberries: 215, cherries: 110},
+		//   {apricots: 80, blueberries: 230, cherries: 105},
+		//   {apricots: 120, blueberries: 240, cherries: 105}
+		// ];
+
+		// let stack = d3.stack()
+		//   .keys(['apricots', 'blueberries', 'cherries']);
+
+		// let stackedSeries = stack(data);
+
+		// // Create a g element for each series
+		// let g = d3.select('g')
+		// 	.selectAll('.series')
+		// 	.data(stackedSeries)
+		// 	.enter()
+		// 	.append('g')
+		// 	.classed('series', true)
+		// 	.style('fill', function(d, i) {
+		// 		return colors[i];
+		// 	});
+
+		// // For each series create a rect element for each day
+		// g.selectAll('rect')
+		// 	.data(function(d) {
+		// 		return d;
+		// 	})
+		// 	.join('rect')
+		// 	.attr('width', function(d) {
+		// 		return d[1] - d[0];
+		// 	})
+		// 	.attr('x', function(d) {
+		// 		return d[0];
+		// 	})
+		// 	.attr('y', function(d, i) {
+		// 		return i * 20;
+		// 	})
+		// 	.attr('height', 19);
+		  
+
+		
+  		////////////////////////////////////////// 代码1结束
+  		///
+  		///
+  		///
+  		
+
+  		///////////////////////////////////////////////// 代码2
+		///
+		
+		// let yScale = d3.scaleLinear().domain([0, 600]).range([200, 0]);
+
+		// let areaGenerator = d3.area()
+		// 	.x(function(d, i) {
+		// 		return i * 100;
+		// 	})
+		// 	.y0(function(d) {
+		// 		return yScale(d[0]);
+		// 	})
+		// 	.y1(function(d) {
+		// 		return yScale(d[1]);
+		// 	});
+
+		// let colors = ['#FBB65B', '#513551', '#de3163'];
+
+		// let data = [
+		//   {apricots: 120, blueberries: 180, cherries: 100},
+		//   {apricots: 60, blueberries: 185, cherries: 105},
+		//   {apricots: 100, blueberries: 215, cherries: 110},
+		//   {apricots: 80, blueberries: 230, cherries: 105},
+		//   {apricots: 120, blueberries: 240, cherries: 105}
+		// ];
+
+		// let stack = d3.stack()
+		// 	.keys(['apricots', 'blueberries', 'cherries']);
+
+		// let stackedSeries = stack(data);
+
+		// d3.select('g')
+		// 	.selectAll('path')
+		// 	.data(stackedSeries)
+		// 	.join('path')
+		// 	.style('fill', function(d, i) {
+		// 		return colors[i];
+		// 	})
+		// 	.attr('d', areaGenerator)
+
+		  
+
+		
+  		////////////////////////////////////////// 代码2结束
+
+
+
+
+  		///////////////////////////////////////////////// 代码3
+		///
+		
+		let yScale = d3.scaleLinear().domain([0, 800]).range([200, 0]);
+
+		let areaGenerator = d3.area()
+			.x(function(d, i) {
+				return i * 50;
+			})
+			.y0(function(d) {
+				return yScale(d[0]);
+			})
+			.y1(function(d) {
+				return yScale(d[1]);
+			})
+			.curve(d3.curveCatmullRom);
+
+		let colors = ['#FBB65B', '#FBCF3B', '#de3163', '#4A79A4'];
+
+		let data = [
+			{day: 1, apricots: 100, bananas: 140, cherries: 105, damsons: 80},
+			{day: 2, apricots: 110, bananas: 150, cherries: 105, damsons: 40},
+			{day: 3, apricots: 130, bananas: 160, cherries: 115, damsons: 50},
+			{day: 4, apricots: 110, bananas: 200, cherries: 110, damsons: 90},
+			{day: 5, apricots: 100, bananas: 220, cherries: 105, damsons: 120},
+			{day: 6, apricots: 120, bananas: 240, cherries: 105, damsons: 150},
+			{day: 7, apricots: 80, bananas: 230, cherries: 105, damsons: 150},
+			{day: 8, apricots: 100, bananas: 215, cherries: 110, damsons: 100},
+			{day: 9, apricots: 60, bananas: 185, cherries: 105, damsons: 150},
+			{day: 10, apricots: 120, bananas: 180, cherries: 130, damsons: 150}
+		];
+
+		let stack = d3.stack()
+			.keys(['apricots', 'bananas', 'cherries', 'damsons'])
+			.order(d3.stackOrderInsideOut)
+			.offset(d3.stackOffsetWiggle);
+
+		let stackedSeries = stack(data);
+
+		d3.select('g')
+			.selectAll('path')
+			.data(stackedSeries)
+			.join('path')
+			.style('fill', function(d, i) {
+				return colors[i];
+			})
+			.attr('d', areaGenerator)
+
+
+
+		  
+
+		
+  		////////////////////////////////////////// 代码3结束
+  
+	</script>
+</body>
+</html>

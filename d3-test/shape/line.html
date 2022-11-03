@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../libs/main.css">
+</head>
+<body>
+	 <svg width="700" height="130">
+	  	<path transform="translate(100,100)" stroke="blue" fill="none"/>
+	 </svg>
+
+  
+
+	<script src="../libs/d3.v7.js"></script>
+	<script>
+		///////////////////////////////////////////////// 代码1
+		// let lineGenerator = d3.line();	
+		// let points = [
+		//   [0, 80],
+		//   [100, 100],
+		//   [200, 30]
+		// ];
+		
+
+
+		// let pathData = lineGenerator(points);
+
+		// d3.select('path')
+  // 			.attr('d', pathData);
+		
+  		////////////////////////////////////////// 代码1结束
+
+		////////////////////////////////////////// 代码2
+		// let xScale = d3.scaleLinear().domain([0, 6]).range([0, 600]);
+
+		// let lineGenerator = d3.line()
+		// 	.x(function(d, i) {
+		// 		return xScale(i);
+		// 		// return i * 10;
+		// 	})
+		// 	.y(function(d) {
+		// 		return d.value;
+		// 	});
+
+		// let data = [
+		// 	{value: 80}, 
+		// 	{value: 100}, 
+		// 	{value: 30}, 
+		// 	{value: 40}, 
+		// 	{value: 20}
+		// ];
+
+		// let pathData = lineGenerator(data);
+
+		// d3.select('path')
+		// 	.attr('d', pathData);
+  		/////////////////////////////////////// 代码2 结束
+  
+
+
+
+
+
+  		///////////////////////////////////////////////// 代码3
+								
+	
+		// let xScale = d3.scaleLinear().domain([0, 6]).range([0, 600]);
+
+		// let lineGenerator = d3.line()
+		// 	.x(function(d, i) {
+		// 		return xScale(i);
+		// 	})
+		// 	.y(function(d) {
+		// 		return d.value;
+		// 	})
+		// 	.curve(d3.curveCardinal);
+
+		// let data = [
+		// 	{value: 80}, 
+		// 	{value: 100}, 
+		// 	{value: 30}, 
+		// 	{value: 40}, 
+		// 	{value: 20}
+		// ];
+
+		// let pathData = lineGenerator(data);
+		// d3.select('path')
+  // 			.attr('d', pathData);
+		
+  		////////////////////////////////////////// 代码3结束  
+  		
+
+
+
+
+  		///////////////////////////////////////////////// 代码4
+								
+	
+		// let xScale = d3.scaleLinear().domain([0, 6]).range([0, 600]);
+
+		// let lineGenerator = d3.line()
+		// 	.x(function(d, i) {
+		// 		return xScale(i);
+		// 	})
+		// 	.y(function(d) {
+		// 		return d.value;
+		// 	})
+		// 	.curve(d3.curveCardinal)
+		// 	.defined(function(d) {
+		// 	    return d !== null;
+		// 	});
+
+
+		// let data = [
+		// 	{value: 80}, 
+		// 	{value: 100}, 
+		// 	{value: 30}, 
+		// 	null,
+		// 	{value: 40}, 
+		// 	{value: 20}
+		// ];
+
+		// let pathData = lineGenerator(data);
+		// d3.select('path')
+  // 			.attr('d', pathData);
+		
+  		////////////////////////////////////////// 代码4结束  
+
+
+
+  		///////////////////////////////////////////////// 代码5
+  		///使用默认设置构造一个新的径向线生成器。径向线生成器等效于标准笛卡尔线生成器，除了x和y访问器被角度和半径访问器替换。径向线总是相对于⟨0,0⟩定位；使用变换（参见：SVG、Canvas）来改变原点。
+		let lineRadialGenerator = d3.lineRadial();
+
+		let points = [
+		  [0, 80],
+		  [Math.PI * 0.25, 80],
+		  [Math.PI * 0.5, 30],
+		  [Math.PI * 0.75, 80],
+		  [Math.PI, 80],
+		  [Math.PI * 1.25, 80],
+		  [Math.PI * 1.5, 80],
+		  [Math.PI * 1.75, 80],
+		  [Math.PI * 2, 80]
+		];
+
+		let pathData = lineRadialGenerator(points);
+
+		d3.select('path')
+  			.attr('d', pathData);
+		
+  		////////////////////////////////////////// 代码5结束  
+
+
+
+
+
+
+
+
+
+
+
+  // 		let context = d3.select('canvas').node().getContext('2d');
+
+		// lineGenerator.context(context);
+
+		// context.strokeStyle = '#999';
+		// context.beginPath();
+		// lineGenerator(points);
+		// context.stroke();
+	</script>
+</body>
+</html>

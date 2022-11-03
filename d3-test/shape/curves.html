@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../libs/main.css">
+</head>
+<body>
+	 <svg width="700" height="130">
+	  	<path transform="translate(100,100)" stroke="blue" fill="none"/>
+	  	<text transform="translate(100,100)" stroke="blue" fill="none"/>
+	 </svg>
+
+  
+
+	<script src="../libs/d3.v7.js"></script>
+	<script>
+		///////////////////////////////////////////////// 代码1
+		
+		// let lineGenerator = d3.line()
+  //   					.curve(d3.curveCatmullRom);
+		// let points = [
+		//   [0, 80],
+		//   [100, 100],
+		//   [200, 30],
+		//   [300, 80],
+		//   [400, 20],
+		// ];
+
+		// let pathData = lineGenerator(points);
+
+		// d3.select('path')
+  // 			.attr('d', pathData);
+		
+
+  		////////////////////////////////////////// 代码1结束
+
+
+  		let lineGenerator = d3.line();
+    	let points = [
+		  [0, 80],
+		  [100, 100],
+		  [200, 30],
+		  [300, 80],
+		  [400, 20],
+		];
+  		let curves = ['curveBasis','curveBasisClosed','curveBasisOpen','curveBumpX','curveBumpY','curveBundle','curveCardinal','curveCardinalClosed','curveCardinalOpen','curveCatmullRom','curveCatmullRomClosed','curveCatmullRomOpen','curveLinear','curveLinearClosed','curveMonotoneX','curveMonotoneY','curveNatural','curveStep','curveStepAfter','curveStepBefore']
+  		let i = 0;
+  		setInterval(function(){
+  			let pathData = lineGenerator.curve(d3[curves[i]])(points);
+  			d3.select('path')
+  				.attr('d', pathData);
+  			d3.select('text')
+				.text(function(d) {
+					return 'd3.' + curves[i];
+				});
+  			i++;
+  			if(i === curves.length - 1){
+  				i = 0;
+  			}
+  		},800)
+  		
+	</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "@d3/versor-dragging",
+  "main": "d422dd0a1d5ee8b8@207.js",
+  "version": "207.0.0",
+  "homepage": "https://observablehq.com/@d3/versor-dragging",
+  "author": {
+    "name": "D3",
+    "url": "https://observablehq.com/@d3"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
