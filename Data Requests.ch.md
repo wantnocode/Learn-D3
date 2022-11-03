@@ -1,6 +1,6 @@
 # D3-fetch
 
-![image-20220823161448568](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220823161448568.png)
+![image-20220823161448568](./image/image-20220823161448568.png)
 
 *如何使用 `D3 fetch`请求和解析 CSV 和 JSON 数据。*
 
@@ -79,28 +79,28 @@ d3.csv('/A/A.csv')
 
 ```
 function update(data) {
-	d3.select('#content tbody')
-		.selectAll('tr')
-		.data(data)
-		.join('tr')
-		.html(function(d) {
-			let html = '<tr>';
-			html += '<td>' + d.name + '</td>';
-			html += '<td>' + d.age + '</td>';
-			html += '<td>' + d.gender + '</td>';
-			// html += '<td>' + d.workers + '</td>';
-			html += '</tr>';
-			return html;
-		});
+  d3.select('#content tbody')
+    .selectAll('tr')
+    .data(data)
+    .join('tr')
+    .html(function(d) {
+      let html = '<tr>';
+      html += '<td>' + d.name + '</td>';
+      html += '<td>' + d.age + '</td>';
+      html += '<td>' + d.gender + '</td>';
+      // html += '<td>' + d.workers + '</td>';
+      html += '</tr>';
+      return html;
+    });
 }
 
 d3.csv('https://wantnocode.github.io/test1.csv')
-	.then(function(data) {
-		update(data);
-	});
+  .then(function(data) {
+    update(data);
+  });
 ```
 
-![image-20220822162328873](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220822162328873.png)
+![image-20220822162328873](./image/image-20220822162328873.png)
 
 > https://codepen.io/wantnocode/pen/BarvYya
 
@@ -162,9 +162,9 @@ function convertRow(d) {
 
 ```
 d3.json('https://wantnocode.github.io/test.json')
-	.then(function(data) {
-		update(data);
-	});
+  .then(function(data) {
+    update(data);
+  });
 ```
 
 当 JSON 文件到达时，D3 将其转换为 JavaScript 数组或对象,
@@ -173,22 +173,22 @@ d3.json('https://wantnocode.github.io/test.json')
 
 ```
 function update(data) {
-	d3.select('#content tbody')
-		.selectAll('tr')
-		.data(data)
-		.join('tr')
-		.html(function(d) {
-			let html = '<tr>';
-			html += '<td>' + d.name + '</td>';
-			html += '<td>' + d.age + '</td>';
-			html += '<td>' + d.gender + '</td>';
-			html += '</tr>';
-			return html;
-		});
+  d3.select('#content tbody')
+    .selectAll('tr')
+    .data(data)
+    .join('tr')
+    .html(function(d) {
+      let html = '<tr>';
+      html += '<td>' + d.name + '</td>';
+      html += '<td>' + d.age + '</td>';
+      html += '<td>' + d.gender + '</td>';
+      html += '</tr>';
+      return html;
+    });
 }
 ```
 
-![image-20220818165029581](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818165029581.png)
+![image-20220818165029581](./image/image-20220818165029581.png)
 
 >  https://codepen.io/wantnocode/pen/WNzLMeQ
 
