@@ -99,3 +99,18 @@ D3一直以来都是JavaScript最重要的数据可视化库之一，在创建�
 
 然后当您读到这里说明对上面的内容很感兴趣 那么让我们开始具体模块的学习吧。
 
+
+- [Selections.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/Selections.ch.md "Selections.ch.md")
+- [Data Joins.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/Data%20Joins.ch.md "Data Joins.ch.md")
+- [Shapes.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/Shapes.ch.md "Shapes.ch.md")
+- [Enter, Exit and Update.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/Enter%2C%20Exit%20and%20Update.ch.md "Enter, Exit and Update.ch.md")
+- [Scale functions.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/Scale%20functions.ch.md "Scale functions.ch.md")
+- [Axes.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/Axes.ch.md "Axes.ch.md")
+- [Hierarchies.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/Hierarchies.ch.md "Hierarchies.ch.md")
+- [Data Requests.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/Data%20Requests.ch.md "Data Requests.ch.md")
+- [Force layout.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/Force%20layout.ch.md "Force layout.ch.md")
+- [Zoom & pan.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/Zoom%20%26%20pan.ch.md "Zoom & pan.ch.md")
+- [dragging-Brushing.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/dragging-Brushing.ch.md "dragging-Brushing.ch.md")
+- [transitions.ch.md](https://github.com/wantnocode/Learn-D3/blob/main/transitions.ch.md "transitions.ch.md")
+- Map(未更新)
+- 示例(未更新)
