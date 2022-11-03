@@ -89,9 +89,7 @@ d3相关学习 包含简易demo
 
 `transitions`可以在不同图表状态平滑转换,制作动画。例如，有一些`circle`元素, 当用户点击`update data`时 平滑过渡到新的坐标位置。为图表增加了视觉吸引力。
 
-![image](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=a3a9a064e8ddbefc77eed66ab676bf32&file=file.gif)
-<img src="https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=a3a9a064e8ddbefc77eed66ab676bf32&file=file.gif">
-
+![6c98e31c0e24358988942c787c79282f535e03788fa4482978f3c2d8a41f100ea740763315cc3c526724204a30ddea7cca6d5db8e2076b03c97ad2886d1279962f77d976d4f6f39750d512c331276b3ea9a7428848d7758b5978d8b1baf007488f76600a386bcc5c71816352c24e8e1](https://user-images.githubusercontent.com/32726183/199635756-65787cba-6038-4c92-980d-dbf3a60aae1d.gif)
 
 
 
