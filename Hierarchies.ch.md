@@ -160,7 +160,6 @@ root.sum(function(d) {
 });
 ```
 
-<iframe class="db center" src="https://www.d3indepth.com/examples-merged/arrays/rollup-hierarchy-with-sum/" marginwidth="0" marginheight="0" scrolling="yes" style="border: none; margin-top: 2em; display: block; margin-left: auto; margin-right: auto; color: rgba(0, 0, 0, 0.7); font-family: -apple-system, BlinkMacSystemFont, &quot;avenir next&quot;, avenir, &quot;helvetica neue&quot;, helvetica, ubuntu, roboto, noto, &quot;segoe ui&quot;, arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; width: 400px; height: 0px;"></iframe>
 
 > 该`.sum`方法采用一个访问器函数，其第一个参数是节点的`data`属性。访问器函数返回要求和的值。
 
