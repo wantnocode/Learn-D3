@@ -40,9 +40,9 @@ d3.select('svg g')
   .call(axis);
 ```
 
-![image-20220818102340554](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818102340554.png)
+![image-20220818102340554](./image/image-20220818102340554.png)
 
-![image-20220818102423336](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818102423336.png)
+![image-20220818102423336](./image/image-20220818102423336.png)
 
 > https://codepen.io/wantnocode/pen/dymwRRM `.call`将在[选择](https://www.d3indepth.com/selections)章节中介绍。
 
@@ -74,7 +74,7 @@ d3.select('#top').call(axisTop);
 d3.select('#bottom').call(axisBottom);
 ```
 
-![image-20220818103006612](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818103006612.png)
+![image-20220818103006612](./image/image-20220818103006612.png)
 
 > https://codepen.io/wantnocode/pen/gOeZRGx
 
@@ -86,7 +86,7 @@ d3.select('#bottom').call(axisBottom);
 
 以下是使用每种比例类型的示例：
 
-![image-20220818104802934](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818104802934.png)
+![image-20220818104802934](./image/image-20220818104802934.png)
 
 > https://codepen.io/wantnocode/pen/wvmRepy
 
@@ -107,7 +107,7 @@ d3.select('svg g')
   .call(axis);
 ```
 
-![image-20220818112133102](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818112133102.png)
+![image-20220818112133102](./image/image-20220818112133102.png)
 
 > https://codepen.io/wantnocode/pen/wvmRqwY
 
@@ -136,7 +136,7 @@ d3.select('svg g')
   .call(axis);
 ```
 
-![image-20220818113802141](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818113802141.png)
+![image-20220818113802141](./image/image-20220818113802141.png)
 
 > 根据配置使用尽可能多的刻度，但在某些情况下，它会有所差异的使用以使刻度值成为整数。
 >
@@ -159,7 +159,7 @@ d3.select('svg g')
 	.call(axis);
 ```
 
-![image-20220818133551695](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818133551695.png)
+![image-20220818133551695](./image/image-20220818133551695.png)
 
 > https://codepen.io/wantnocode/pen/YzadxWY
 
@@ -167,7 +167,7 @@ d3.select('svg g')
 
 您可以通过两种方式格式化刻度标签。
 
-![image-20220818114228384](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818114228384.png)
+![image-20220818114228384](./image/image-20220818114228384.png)
 
 **第一种是使用该`.ticks`方法并传入一个固定格式字符串([参考d3-format](https://github.com/d3/d3-format)))作为第二个参数**：
 
@@ -182,7 +182,7 @@ d3.select('svg g')
   .call(axis);
 ```
 
-![image-20220818135405944](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818135405944.png)
+![image-20220818135405944](./image/image-20220818135405944.png)
 
 
 
@@ -206,7 +206,7 @@ d3.select('svg g')
   .call(axis);
 ```
 
-![image-20220818134558820](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818134558820.png)
+![image-20220818134558820](./image/image-20220818134558820.png)
 
 > https://codepen.io/wantnocode/pen/wvmRrrG
 
@@ -225,7 +225,7 @@ d3.select('svg g')
 	.call(axis);
 ```
 
-![image-20220818134826956](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220818134826956.png)
+![image-20220818134826956](./image/image-20220818134826956.png)
 
 
 
