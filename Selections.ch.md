@@ -1,6 +1,7 @@
 # D3 Selections(选择)
 
-![img](https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=0a7907301af52dca3aa381f9588554ec)
+![image](https://user-images.githubusercontent.com/32726183/199642600-fbce5484-0a7d-4b78-98f9-ad3611527d1f.png)
+
 
 如何使用 `D3 Selction`来选择 HTML 和 SVG 元素。本文展示了如何`selecting Elements` , `modifying Elements` ,  `Handling Events`, `Control Flow`... <u>(`joining Data`单独有一篇讲解)</u>，除此之外还有`Chaining `链式调用 `filter sort`等函数对元素的处理。
 
@@ -16,7 +17,7 @@ d3.selectAll("p")
     .style("color", "red");
 ```
 
-![image-20220815162838211](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815162838211.png)
+![image-20220815162838211](./image/image-20220815162838211.png)
 
 例如，如果index.html`文件包含几个` circle`元素：
 
@@ -33,13 +34,13 @@ d3.selectAll("p")
 
 ```
 d3.selectAll('circle')
-	.style('fill', 'red')
-	.attr('r', function() {
-		return 20;
-	}); 
+  .style('fill', 'red')
+  .attr('r', function() {
+    return 20;
+  }); 
 ```
 
-![image-20220815162758018](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815162758018.png)
+![image-20220815162758018](./image/image-20220815162758018.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/bGvmQLO)
 
@@ -77,7 +78,7 @@ const items = d3.selectAll(".item");  // 匹配class名为.item的所有元素
 
 以下是所有这些函数的使用示例：
 
-![image-20220815164349719](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815164349719.png)
+![image-20220815164349719](./image/image-20220815164349719.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/WNzaLxb)
 
@@ -88,7 +89,7 @@ const items = d3.selectAll(".item");  // 匹配class名为.item的所有元素
 ```
 d3.selectAll('circle')
     .attr('r', function(d, i) {
-    	return i * 10;
+      return i * 10;
     });
 ```
 
@@ -99,11 +100,11 @@ d3.selectAll('circle')
 ```
 d3.selectAll('circle')
     .attr('cx', function(d, i) {
-    	return i * 10;
+      return i * 10;
     });
 ```
 
-![image-20220815165357083](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815165357083.png)![image-20220815165409977](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815165409977.png)
+![image-20220815165357083](./image/image-20220815165357083.png)![image-20220815165409977](./image/image-20220815165409977.png)
 
 在传入函数的大多数情况下，使用匿名函数。但是，您也可以使用命名函数。例如：
 
@@ -162,7 +163,7 @@ d3.selectAll('g')
 ...
 ```
 
-![image-20220815171113940](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815171113940.png)
+![image-20220815171113940](./image/image-20220815171113940.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/eYMPbME)
 
@@ -176,7 +177,7 @@ d3.selectAll('g.item')
   .text('A');
 ```
 
-![image-20220815171917840](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815171917840.png)
+![image-20220815171917840](./image/image-20220815171917840.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/ExEdGRE)
 
@@ -187,9 +188,9 @@ d3.selectAll('circle')
   .remove();
 ```
 
-![image-20220815172305125](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815172305125.png)
+![image-20220815172305125](./image/image-20220815172305125.png)
 
-![image-20220815172312667](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815172312667.png)
+![image-20220815172312667](./image/image-20220815172312667.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/MWVPZPv)
 
@@ -222,7 +223,7 @@ d3.selectAll('circle')
   });
 ```
 
-![image-20220815174327573](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815174327573.png)
+![image-20220815174327573](./image/image-20220815174327573.png)
 
 请注意，这`this`是一个 DOM 元素，而不是 D3 选择，因此您想使用 D3 修改它，您必须首先使用**`d3.select(this)`.**
 
@@ -234,15 +235,15 @@ d3.selectAll('circle')
 
 ```
 d3.selectAll('circle')
-	.style('fill', '#000')
-	.attr('r', 20)
-	.on('click', function(e, d) {
-		d3.select(this)
-			.style('fill', 'orange');
-	});
+  .style('fill', '#000')
+  .attr('r', 20)
+  .on('click', function(e, d) {
+    d3.select(this)
+      .style('fill', 'orange');
+  });
 ```
 
-![image-20220815174708732](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815174708732.png)
+![image-20220815174708732](./image/image-20220815174708732.png)
 
 ### Control Flow
 
@@ -266,7 +267,7 @@ d3.selectAll('circle')
   
 ```
 
-![image-20220815175047627](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815175047627.png)
+![image-20220815175047627](./image/image-20220815175047627.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/yLKRZYp)
 
@@ -286,7 +287,7 @@ d3.selectAll('circle')
     .call(colorAll);
 ```
 
-![image-20220815175331928](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220815175331928.png)
+![image-20220815175331928](./image/image-20220815175331928.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/BarGKpL)
 
@@ -306,7 +307,7 @@ d3.selectAll('circle')
   .style('fill', 'orange');
 ```
 
-![image-20220816100111200](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816100111200.png)
+![image-20220816100111200](./image/image-20220816100111200.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/xxWQVgM)
 
@@ -340,8 +341,8 @@ d3.selectAll('circle')
     });
 ```
 
-![image-20220816100644393](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816100644393.png)
+![image-20220816100644393](./image/image-20220816100644393.png)
 
-![image-20220816100653868](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220816100653868.png)
+![image-20220816100653868](./image/image-20220816100653868.png)
 
 > [在codepen中尝试编辑上面示例](https://codepen.io/wantnocode/pen/KKorzWy)
