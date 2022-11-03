@@ -1,6 +1,6 @@
 # D3 Hierarchies
 
-![image-20220823162654765](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220823162654765.png)
+![image-20220823162654765](./image/image-20220823162654765.png)
 
 *如何使用 D3.js 可视化分层数据（树形数据）。本文展示了如何从数据数组创建分层数据结构。然后使用 D3进行可视化，布局展示形式包括`Tree,Cluster,Treemap,Pack,Partition`*。
 
@@ -33,7 +33,7 @@
 
 可以将层次结构视为树状结构，其中根节点(这里定义为CEO), 拆分为顶层（这里是boss）。每个顶级节点拆分为二级节点组（这里是下属），依此类推：
 
-![image-20220824113057496](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824113057496.png)
+![image-20220824113057496](./image/image-20220824113057496.png)
 
 > 最顶层的元素（**节点**）称为`root node`(**根节点**)。最底部的项目称为**叶子**或**叶子节点**。
 
@@ -51,34 +51,34 @@
 
 ```
 let Structure = [
-	{
-		"name":"老王下属1",
-		"boss":"老王",
-	},
-	{
-		"name":"老王下属2",
-		"boss":"老王",
-	},
-	{
-		"name":"老王下属3",
-		"boss":"老王",
-	},
-	{
-		"name":"老李下属1",
-		"boss":"老李",
-	},
-	{
-		"name":"老李下属2",
-		"boss":"老李",
-	},
-	{
-		"name":"老李下属3",
-		"boss":"老李",
-	},
+  {
+    "name":"老王下属1",
+    "boss":"老王",
+  },
+  {
+    "name":"老王下属2",
+    "boss":"老王",
+  },
+  {
+    "name":"老王下属3",
+    "boss":"老王",
+  },
+  {
+    "name":"老李下属1",
+    "boss":"老李",
+  },
+  {
+    "name":"老李下属2",
+    "boss":"老李",
+  },
+  {
+    "name":"老李下属3",
+    "boss":"老李",
+  },
 ]
 ```
 
-> 可以使用 ![image-20220824113524559](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824113524559.png)函数按任何分类属性对数据进行分组。
+> 可以使用 ![image-20220824113524559](./image/image-20220824113524559.png)函数按任何分类属性对数据进行分组。
 
 第一个参数`.rollup`要分组的数据 （可迭代的数组）。
 
@@ -90,12 +90,12 @@ let Structure = [
 
 ```
 let groups = d3.rollup(Structure,
-					   function(d) { return d.length; },// 此处length就是1;
-					   function(d) { return d.boss; },
-					   function(d) { return d.name; },
+             function(d) { return d.length; },// 此处length就是1;
+             function(d) { return d.boss; },
+             function(d) { return d.name; },
 ```
 
-![image-20220824114112940](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824114112940.png)
+![image-20220824114112940](./image/image-20220824114112940.png)
 
 在上面的示例中，按和`d3.rollup`分组。
 
@@ -120,16 +120,16 @@ D3 内部有一个生成层次结构数据结构的函数。
 
 ```
 let groups = d3.rollup(Structure,
-					   function(d) { return d.length; },
-					   function(d) { return d.boss; },
-					   function(d) { return d.name; },
-					  );
+             function(d) { return d.length; },
+             function(d) { return d.boss; },
+             function(d) { return d.name; },
+            );
 let root = d3.hierarchy(groups);
 ```
 
 
 
-![image-20220824114727198](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824114727198.png)
+![image-20220824114727198](./image/image-20220824114727198.png)
 
 >  在一个基础常规的 JavaScript 对象，并在其上定义了各种提供附加功能的属性和方法。其中每个节点都有属性：`data`、`children`、`depth`和。`height``parent`
 
@@ -143,7 +143,7 @@ let root = d3.hierarchy(groups);
 
 叶节点看起来像：
 
-![image-20220824133328933](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824133328933.png)
+![image-20220824133328933](./image/image-20220824133328933.png)
 
 可以看到该`data`属性包含汇总的值。如果汇总的值是总和或计数，则可以使用层次结构的`.sum`方法将其返回给`root`：
 
@@ -156,7 +156,7 @@ let groups = d3.rollup(Structure,
 let root = d3.hierarchy(groups);
 
 root.sum(function(d) {
-	return d[1];
+  return d[1];
 });
 ```
 
@@ -168,11 +168,11 @@ root.sum(function(d) {
 
 观察每个叶节点现在将具有`value`与其汇总值等效的属性。例如：
 
-![image-20220824133711480](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824133711480.png)
+![image-20220824133711480](./image/image-20220824133711480.png)
 
 非叶节点还将具有一个`value`属性，即其子节点的值之和。
 
-![image-20220824133730511](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824133730511.png)
+![image-20220824133730511](./image/image-20220824133730511.png)
 
 
 
@@ -190,19 +190,19 @@ root.sum(function(d) {
 
 `Tree`
 
-![image-20220824141237713](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824141237713.png)
+![image-20220824141237713](./image/image-20220824141237713.png)
 
 > https://codepen.io/wantnocode/pen/BarEdxY
 
 `Treemap`
 
-![image-20220824154122632](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824154122632.png)
+![image-20220824154122632](./image/image-20220824154122632.png)
 
 > https://codepen.io/wantnocode/pen/gOeyxJe?editors=1111
 
 `Pack `：
 
-![image-20220824151902200](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824151902200.png)
+![image-20220824151902200](./image/image-20220824151902200.png)
 
 > https://codepen.io/wantnocode/pen/dymLVaj
 
@@ -210,7 +210,7 @@ root.sum(function(d) {
 
 
 
-![image-20220824153940570](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824153940570.png)
+![image-20220824153940570](./image/image-20220824153940570.png)
 
 > https://codepen.io/wantnocode/pen/MWVROgJ
 
@@ -226,7 +226,7 @@ root.sum(function(d) {
 
 **布局以树状排列方式排列**层次结构的节点。
 
-![image-20220824141237713](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824141237713.png)
+![image-20220824141237713](./image/image-20220824141237713.png)
 
 > https://codepen.io/wantnocode/pen/BarEdxY
 
@@ -269,22 +269,22 @@ treeLayout(root);
 ```
 // Links
 d3.select('svg g')
-	.selectAll('line')
-	.data(root.links())
-	.join('line')
-	.attr('x1', function(d) {return d.source.x;})
-	.attr('y1', function(d) {return d.source.y;})
-	.attr('x2', function(d) {return d.target.x;})
-	.attr('y2', function(d) {return d.target.y;});
+  .selectAll('line')
+  .data(root.links())
+  .join('line')
+  .attr('x1', function(d) {return d.source.x;})
+  .attr('y1', function(d) {return d.source.y;})
+  .attr('x2', function(d) {return d.target.x;})
+  .attr('y2', function(d) {return d.target.y;});
 
 // Nodes
 d3.select('svg g')
-	.selectAll('circle')
-	.data(root.descendants())
-	.join('circle')
-	.attr('cx', function(d) {return d.x;})
-	.attr('cy', function(d) {return d.y;})
-	.attr('r', 4);
+  .selectAll('circle')
+  .data(root.descendants())
+  .join('circle')
+  .attr('cx', function(d) {return d.x;})
+  .attr('cy', function(d) {return d.y;})
+  .attr('r', 4);
 
 ```
 
@@ -303,13 +303,13 @@ var root = d3.hierarchy(data);
 clusterLayout(root);
 ```
 
-![image-20220824141301367](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824141301367.png)
+![image-20220824141301367](./image/image-20220824141301367.png)
 
 > https://codepen.io/wantnocode/pen/rNdbzvX?editors=1111
 
 ### Treemap Layout (树状图布局)
 
-![image-20220824155635775](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824155635775.png)
+![image-20220824155635775](./image/image-20220824155635775.png)
 
 通过调用创建树图布局函数`d3.treemap()` ：
 
@@ -356,7 +356,7 @@ d3.select('svg g')
   .attr('height', function(d) { return d.y1 - d.y0; })
 ```
 
-![image-20220824141941296](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824141941296.png)
+![image-20220824141941296](./image/image-20220824141941296.png)
 
 如果您想在每个矩形中添加标签，您可以将`g`元素加入数组并添加`rect`和`text`元素到每个`g`：
 
@@ -381,7 +381,7 @@ nodes
   })
 ```
 
-![image-20220824154122632](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824154122632.png)
+![image-20220824154122632](./image/image-20220824154122632.png)
 
 > https://codepen.io/wantnocode/pen/gOeyxJe?editors=1111
 
@@ -407,9 +407,9 @@ nodes
 treemapLayout.tile(d3.treemapDice)
 ```
 
-![image-20220824154155985](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824154155985.png)
+![image-20220824154155985](./image/image-20220824154155985.png)
 
-![image-20220824154207555](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824154207555.png)
+![image-20220824154207555](./image/image-20220824154207555.png)
 
 > https://codepen.io/wantnocode/pen/RwMOLaM
 
@@ -417,7 +417,7 @@ treemapLayout.tile(d3.treemapDice)
 
 `Pack`布局类似于`Tree`布局，但**圆圈**用于表示节点。
 
-![image-20220824155621105](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824155621105.png)
+![image-20220824155621105](./image/image-20220824155621105.png)
 
 使用以下命令创建`Pack`布局函数`d3.pack()`：
 
@@ -478,7 +478,7 @@ nodes
   })
 ```
 
-![image-20220824151749759](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824151749759.png)
+![image-20220824151749759](./image/image-20220824151749759.png)
 
 可以使用`.padding()`配置每个圆圈周围的填充：
 
@@ -488,7 +488,7 @@ packLayout.padding(20);
 
 > 注意配置放在应用布局`packLayout()`之前;
 
-![image-20220824151902200](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824151902200.png)
+![image-20220824151902200](./image/image-20220824151902200.png)
 
 > https://codepen.io/wantnocode/pen/dymLVaj
 
@@ -534,7 +534,7 @@ d3.select('svg g')
   .attr('height', function(d) { return d.y1 - d.y0; });
 ```
 
-![image-20220824153116688](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824153116688.png)
+![image-20220824153116688](./image/image-20220824153116688.png)
 
 可以使用以下方法在节点之间添加填充`.padding()`：
 
@@ -542,7 +542,7 @@ d3.select('svg g')
 partitionLayout.padding(2);
 ```
 
-![image-20220824153042215](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824153042215.png)
+![image-20220824153042215](./image/image-20220824153042215.png)
 
 > https://codepen.io/wantnocode/pen/WNzWZWv
 
@@ -555,7 +555,7 @@ partitionLayout.padding(2);
   .attr('height', function(d) { return d.x1 - d.x0; });
 ```
 
-![image-20220824153503496](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824153503496.png)
+![image-20220824153503496](./image/image-20220824153503496.png)
 
 > https://codepen.io/wantnocode/pen/ZExZXde
 
@@ -565,14 +565,14 @@ partitionLayout.padding(2);
 
 ```
 d3.arc()
-	.startAngle(function(d) { return d.x0; })
-	.endAngle(function(d) { return d.x1; })
-	.innerRadius(function(d) { return d.y0; })
-	.outerRadius(function(d) { return d.y1; });
+  .startAngle(function(d) { return d.x0; })
+  .endAngle(function(d) { return d.x1; })
+  .innerRadius(function(d) { return d.y0; })
+  .outerRadius(function(d) { return d.y1; });
 ```
 
 
 
-![image-20220824153940570](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220824153940570.png)
+![image-20220824153940570](./image/image-20220824153940570.png)
 
 > https://codepen.io/wantnocode/pen/MWVROgJ
